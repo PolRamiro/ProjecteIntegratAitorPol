@@ -233,6 +233,9 @@ INSERT INTO `horaris` (`id`,`id_hort`,`nom_dia`,`hora_entrada`,`hora_sortida`,`f
 (6,1,'Dissabte','09:00','21:00',false,26),
 (7,1,'Diumenge','09:00','21:00',true,27);
 
+ALTER TABLE hort
+ADD capacitat_maxima_usuaris int; 
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
