@@ -236,6 +236,10 @@ INSERT INTO `horaris` (`id`,`id_hort`,`nom_dia`,`hora_entrada`,`hora_sortida`,`f
 ALTER TABLE hort
 ADD capacitat_maxima_usuaris int; 
 
+ALTER TABLE activitats ADD COLUMN id_dia_activitat int;
+
+ALTER TABLE activitats
+ADD FOREIGN KEY (id_dia_activitat) REFERENCES horaris(id);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
