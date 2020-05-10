@@ -47,6 +47,7 @@ CREATE TABLE `activitats` (
   `id_hort_on_realitza` int NOT NULL,
   `id_panell` int(11) NOT NULL,
   `Descripcio_Activitat` text NOT NULL,
+  `data_activitat` text NOT NULL,
   FOREIGN KEY (id_hort_on_realitza) REFERENCES hort(id_hort)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -54,11 +55,11 @@ CREATE TABLE `activitats` (
 -- Volcado de datos para la tabla `activitats`
 --
 
-INSERT INTO `activitats` (`id_activitat`, `id_hort_on_realitza`, `id_panell`, `Descripcio_Activitat`) VALUES
-(1,1, 4, 'utilitzar compostatge;14:30;22/7/21'),
-(2,1, 4, 'utilitzar compostatge;14:30;22/7/21'),
-(3,1, 0, 'Plantar llentias;13:00;07/10/20'),
-(4,1, 2, 'Plantar llentias;13:00;07/10/20');
+INSERT INTO `activitats` (`id_activitat`, `id_hort_on_realitza`, `id_panell`, `Descripcio_Activitat`, `data_activitat`) VALUES
+(1,1, 4, 'utilitzar compostatge;14:30','22/7/21'),
+(2,1, 4, 'utilitzar compostatge;14:30','23/7/21'),
+(3,1, 0, 'Plantar llentias;13:00','24/7/21'),
+(4,1, 2, 'Plantar llentias;13:00','07/8/21');
 
 -- --------------------------------------------------------
 
@@ -240,6 +241,7 @@ ALTER TABLE activitats ADD COLUMN id_dia_activitat int;
 
 ALTER TABLE activitats
 ADD FOREIGN KEY (id_dia_activitat) REFERENCES horaris(id);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
