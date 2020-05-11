@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `hort` (
-  `id_hort` int NOT NULL PRIMARY KEY,
+  `id_hort` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Nom Hort` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -43,7 +43,7 @@ INSERT INTO `hort` (`id_hort`,`Nom Hort`) VALUES
 --
 
 CREATE TABLE `activitats` (
-  `id_activitat` int NOT NULL PRIMARY KEY,
+  `id_activitat` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `id_hort_on_realitza` int NOT NULL,
   `id_panell` int(11) NOT NULL,
   `Descripcio_Activitat` text NOT NULL,
@@ -90,7 +90,7 @@ INSERT INTO `composts` (`Data_comprobacio`, `Quantitat_kg`, `id_hort_dipositat`)
 --
 
 CREATE TABLE `einas` (
-  `id_einas` int NOT NULL PRIMARY KEY,
+  `id_einas` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Nom` varchar(50) NOT NULL,
   `id_hort_dipositat` int NOT NULL,
   FOREIGN KEY (id_hort_dipositat) REFERENCES hort(id_hort)
@@ -115,7 +115,7 @@ INSERT INTO `einas` (`id_einas`,`Nom`, `id_hort_dipositat`) VALUES
 --
 
 CREATE TABLE `llavors` (
-  `id_llavor` int NOT NULL PRIMARY KEY,
+  `id_llavor` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `id_hort_dipositat` int NOT NULL,
   `quantitat` int NOT NULL,
   `descripcio` varchar(50) NOT NULL,
@@ -137,7 +137,7 @@ INSERT INTO `llavors` (`id_llavor`, `id_hort_dipositat`, `quantitat`, `descripci
 --
 
 CREATE TABLE `parcela` (
-  `id_parcela` int NOT NULL PRIMARY KEY,
+  `id_parcela` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `id_hort_localitzat` int NOT NULL,
   `id_llavors_plantades` int NOT NULL,
   `Dimensions_Amplada` int NOT NULL,
@@ -161,7 +161,7 @@ INSERT INTO `parcela` (`id_parcela`, `id_hort_localitzat`, `id_llavors_plantades
 --
 
 CREATE TABLE `usuaris` (
-  `id_usuari` int NOT NULL PRIMARY KEY,
+  `id_usuari` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `id_Hort_Afiliat` int NOT NULL,
   `Nom_usuari` varchar(50) NOT NULL,
   `Contrasenya` varchar(50) NOT NULL,
