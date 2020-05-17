@@ -70,8 +70,8 @@ INSERT INTO `activitats` (`id_activitat`, `id_hort_on_realitza`, `id_panell`, `D
 CREATE TABLE `composts` (
   `Data_comprobacio` varchar(10) NOT NULL,
   `Quantitat_kg` double NOT NULL,
-  `id_hort_dipositat` int NOT NULL
-  FOREIGN KEY (id_hort_dipositat) REFERENCES hort(id_hort),
+  `id_hort_dipositat` int NOT NULL,
+  FOREIGN KEY (id_hort_dipositat) REFERENCES hort(id_hort)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
