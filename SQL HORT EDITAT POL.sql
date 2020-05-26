@@ -190,7 +190,7 @@ INSERT INTO `usuaris` (`id_usuari`, `id_Hort_Afiliat`, `Nom_usuari`, `Contraseny
 --
 -- Indices de la tabla `parcela`
 --
-----PART POL
+
 CREATE TABLE `necessitats`(
 	`id` int NOT NULL PRIMARY KEY,
 	`tipus` varchar(255),
@@ -244,7 +244,9 @@ ADD FOREIGN KEY (id_dia_activitat) REFERENCES horaris(id);
 
 ALTER TABLE usuaris
 ADD url_imatges text;
-
+--
+--FER UPDATE PER SEPARAT 
+--
 UPDATE `usuaris` SET `url_imatges` = 'https://www.silicon.es/wp-content/uploads/2019/02/Miguel-Gillis-DG-NFON-Iberia_2-684x513.jpg' WHERE `usuaris`.`id_usuari` = 98371; 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
